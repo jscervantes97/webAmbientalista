@@ -13,7 +13,7 @@ class PruebaController extends AbstractController
 {
 
     /**
-     * @Route("/verAlCine/{id}", name="RegistrarPosts")
+     * @Route("api/verAlCine/{id}", name="RegistrarPosts")
      */
     public function verAlCinePuto(Request $request,$id){
         return new JsonResponse([
