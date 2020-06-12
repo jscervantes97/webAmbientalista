@@ -5,10 +5,12 @@ namespace App\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 class InicioController extends AbstractController
 {
+
     /**
      * @Route("/", name="Inicio")
      */
@@ -16,6 +18,7 @@ class InicioController extends AbstractController
     {
         return $this->render('base.html.twig', []);
     }
+
 
     /**
      * @Route("/404", name="notFound")
