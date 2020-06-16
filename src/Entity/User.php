@@ -34,6 +34,49 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="string", length=180)
+     */
+    private $nombres;
+
+    /**
+     * @ORM\Column(type="string", length=180)
+     */
+    private $apellidos;
+
+    /**
+     * @return mixed
+     */
+    public function getNombres()
+    {
+        return $this->nombres;
+    }
+
+    /**
+     * @param mixed $nombres
+     */
+    public function setNombres($nombres): void
+    {
+        $this->nombres = $nombres;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApellidos()
+    {
+        return $this->apellidos;
+    }
+
+    /**
+     * @param mixed $apellidos
+     */
+    public function setApellidos($apellidos): void
+    {
+        $this->apellidos = $apellidos;
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;
