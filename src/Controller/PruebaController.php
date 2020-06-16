@@ -11,8 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class PruebaController extends AbstractController
 {
-
-    private $pila = array(1,2,3,4);
+    // private $loop = \React\E
+    private $pila = array("Chuy","Jose","Eroham");
 
     /**
      * @Route("api/pila", name="ObtenerTodosAlv", methods={"GET"})

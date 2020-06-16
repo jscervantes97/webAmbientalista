@@ -27,4 +27,11 @@ class InicioController extends AbstractController
     {
         return $this->render('404.html.twig', []);
     }
+    /**
+     * @Route("/otro", name="otra")
+     */
+    public function otro(Request $request)
+    {
+        return $this->render('paginaPrueba.html.twig', []);
+    }
 }

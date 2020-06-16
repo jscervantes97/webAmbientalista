@@ -1,0 +1,38 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DashboardController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <button class="btn btn-primary" onclick="myFunction()">Click Me</button>
+    <div id="pilaContainer">
+
+    </div>
+    {% block javascripts %}
+        <script src="https://cdn.rawgit.com/axios/axios/master/dist/axios.min.js"></script>
+        <script>
+            var HTTP2 = axios.create({
+                baseURL: "http://localhost:8000"
+            })
+            function myFunction(){
+                HTTP2
+                    .get("/api/pila") // Es como concatenar
+                    .then(respuesta => {
+                        var resultados = "";
+                        console.log("Petición GET. Respuesta: ", respuesta.data);
+                        //alert("elemento " + respuesta.data.ElementosActuales[0]);
+                        for(var j = 0 ; j < respuesta.data.ElementosActuales.length; j++){
+                            resultados += "<p> Elemento en la pila [ " + respuesta.data.ElementosActuales[j] + " ]</p>"
+                            // console.log(respuesta.data.ElementosActuales[j]);
+                        }
+                        document.getElementById("pilaContainer").innerHTML = resultados ;
+
+                    });
+
+            }
+
+        </script>
+    {% endblock %}
+{% endblock %}
+
