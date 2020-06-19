@@ -16,7 +16,16 @@ class InicioController extends AbstractController
      */
     public function index(Request $request)
     {
-        return $this->render('base.html.twig', []);
+        $user2 = $this->getUser(); //OBTENGO AL USUARIO ACTUALMENTE LOGUEADO
+        if($user2){
+            return $this->render('base.html.twig', [
+                'usuario'=>$user2
+            ]);
+        }
+        else {
+            return $this->redirectToRoute('app_login');
+        }
+
     }
 
 
